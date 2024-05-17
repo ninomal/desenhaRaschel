@@ -16,7 +16,7 @@ def main():
     pacetasVaziasVect = []
     count = 0
     pacetasDesenho = ""
-    pacetasVaziasVect= ""
+    
     
     
     finura = int(input("Finura: "))
