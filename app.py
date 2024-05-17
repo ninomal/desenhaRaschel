@@ -9,21 +9,25 @@ def main():
     quantidade = 0
     entrada1 = "continue"
     paceta = 0
-    nova = 0
+    nova = 1
     novaDesenho = 0
     finura = 0
     pacetasVaziasList = []
     pacetasVaziasVect = []
     count = 0
     pacetasDesenho = ""
-    
-    
+    pacetasIguaisCount = []
+    pacetasSequencia = 0
+    pacetasIguiasFor = 0
+    countWhile1= 0
+    countWhile2 =0
+    pacetasCheck = True
     
     finura = int(input("Finura: "))
     quantidade = int(input("Quantidade: "))
     numeroVazio = int(input("numero Vazio: "))
-    for desenho2 in range(numeroVazio):
-                    desenho += CARCTVAZIO
+    for desenho2 in range(numeroVazio): 
+        desenho += CARCTVAZIO
     while paceta < quantidade:
         while(entrada1 != "n"):
             numeroCheio = int(input("numero cheio: "))
@@ -52,7 +56,9 @@ def main():
             print("Paceta", novaDesenho )
             pacetasDesenho += pontas
             pacetasVaziasList.append(pacetasDesenho)
-            nova = 0
+            nova = 1
+            countWhile2 +=1
+            countWhile1 +=1
         else:
             print(pontas ,end="")
             nova += 1
@@ -69,6 +75,20 @@ def main():
             count +=1
             if count >= (finura -1):
                 count = 0
+         
+         
+    while (pacetasCheck):
+        pacetasIguiasFor = 0
+        while(pacetasCheck):
+            pacetasIguiasFor+=1
+            if pacetasSequencia >= 3:
+                pacetasCheck = False
+            elif pacetasList[countWhile1] == pacetasList[countWhile2]:
+                pacetasSequencia += 1
+                countWhile2+=1
+            countWhile2+=1
+        countWhile1+= 1
+                   
          
     
     print()
