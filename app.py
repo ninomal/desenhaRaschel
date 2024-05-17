@@ -12,6 +12,12 @@ def main():
     nova = 0
     novaDesenho = 0
     finura = 0
+    pacetasVaziasList = []
+    pacetasVaziasVect = []
+    count = 0
+    pacetasDesenho = ""
+    pacetasVaziasVect= ""
+    
     
     finura = int(input("Finura: "))
     quantidade = int(input("Quantidade: "))
@@ -38,16 +44,37 @@ def main():
 
     finura = finura * 2
     print("Paceta", novaDesenho)
-    for teste in desenho:
+    for pontas in desenho:
         if nova >= finura :
-            print(teste ,end="")
+            print(pontas ,end="")
             novaDesenho +=1
             print()
             print("Paceta", novaDesenho )
+            pacetasDesenho += pontas
+            pacetasVaziasList.append(pacetasDesenho)
             nova = 0
         else:
-            print(teste ,end="")
+            print(pontas ,end="")
             nova += 1
+            pacetasDesenho += pontas
+    
+    
+    for pacetasVect in range(finura - 1):
+        pacetasVaziasVect.append('-')
+    for pacetasList in pacetasVaziasList:
+        count = 0
+        for vazio in pacetasList:
+            if vazio == "I":         
+                pacetasVaziasVect[count] = "I"
+            count +=1
+            if count >= (finura -1):
+                count = 0
+         
+    
+    print()
+    print("Pacetas Vazias ==")
+    print(pacetasVaziasVect)
+    
                         
     
     
