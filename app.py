@@ -76,13 +76,11 @@ def main():
         pacetasVaziaStr += "-" 
     print()
     print("Pacetas com pontas")
-    print(pacetasVaziaStr)
-    print(pacetasDesenhoList[1])
-    print(bool(pacetasVaziaStr == pacetasDesenhoList[1]))
     
     for pacetasCount in pacetasDesenhoList:
         if pacetasCount == pacetasVaziaStr:
-            print()
+            if(finura > 100):
+                print()
         else:
             print("Paceta: ", pacetasVaziasCount)
             print(pacetasCount)
@@ -92,17 +90,21 @@ def main():
          
          
     #sequence count
-    while (pacetasCheck):
-        pacetasIguiasFor = 0
+    while(pacetasCheck):
         while(pacetasCheck):
-            pacetasIguiasFor+=1
             if pacetasSequencia >= 3:
+                pacetasCheck = False
+            elif countWhile2  > len(pacetasDesenho):
+                countWhile1 += 1
+                countWhile2 = 0
+            elif countWhile1  > len(pacetasDesenho):
                 pacetasCheck = False
             elif pacetasDesenho[countWhile1] == pacetasDesenho[countWhile2]:
                 pacetasSequencia += 1
                 countWhile2+=1
             countWhile2+=1
-        countWhile1+= 1
+        
+    
       
     #check void point             
     for pacetasVect in range(finura):
