@@ -29,6 +29,7 @@ def main():
     pontasVazias = 0
     pacetasNumber = 0
     pacetasCountSequence = 1
+    pacetasComPontasList = []
     
     finura = int(input("Finura: "))
     quantidade = int(input("Quantidade: "))
@@ -67,8 +68,6 @@ def main():
             pacetasDesenhoList.append(pacetasDesenho)
             pacetasDesenho = ""
             nova = 1
-            #countWhile2 +=1
-            #countWhile1 +=1
         else:
             print(pontas ,end="")
             nova += 1
@@ -78,8 +77,7 @@ def main():
     for pontasVazias in range(finura):
         pacetasVaziaStr += "-" 
     print()
-    print("Pacetas com pontas")
-    
+    print("Pacetas com pontas")   
     for pacetasCount in pacetasDesenhoList:
         if pacetasCount == pacetasVaziaStr:
             continue
@@ -87,6 +85,7 @@ def main():
             print("Paceta: ", pacetasVaziasCount)
             print(pacetasCount)
             pacetasVaziasCount += 1
+            pacetasComPontasList.append(pacetasCount)
         
              
     #sequence count
@@ -104,21 +103,21 @@ def main():
                 pacetasSequencia += 1
                 countWhile2+=1
             countWhile2+=1
+    print(pacetasComPontasList)
     print(pacetasRepetir)
-        
+    
     #numero de repetiçoes
-    pacetasRepetirComSequencia = pacetasRepetir
-    pacetasListsSlice = pacetasLists[:pacetasRepetirComSequencia]
+    pacetasListsSlice = pacetasComPontasList[:pacetasRepetir]
     print(len(pacetasListsSlice))
     for pacetasSemRepetir in pacetasListsSlice:
         pacetasNumber +=1
         pacetasCountSequence = 1
-        for pacetasRepetidasFor in pacetasLists:
+        for pacetasRepetidasFor in pacetasComPontasList:
             if(pacetasRepetidasFor == pacetasSemRepetir):
                 pacetasCountSequence += 1
         print("Paceta: ", pacetasNumber, pacetasCountSequence)
-                  
-      
+                 
+             
     #check void point             
     for pacetasVect in range(finura):
         pacetasVaziasVect.append('-')
@@ -133,7 +132,7 @@ def main():
                 
            
     print()
-    print("Pacetas Vazias ==")
+    print("Pacetas para colocar gesso ==")
     print(pacetasVaziasVect)
     
                         
