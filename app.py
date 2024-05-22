@@ -25,7 +25,10 @@ def main():
     pacetasVaziaStr = ""
     pacetasVaziasCount = 1
     pacetasCount = 0
+    pacetasRepetir = 1
     pontasVazias = 0
+    pacetasNumber = 0
+    pacetasCountSequence = 1
     
     finura = int(input("Finura: "))
     quantidade = int(input("Quantidade: "))
@@ -79,32 +82,42 @@ def main():
     
     for pacetasCount in pacetasDesenhoList:
         if pacetasCount == pacetasVaziaStr:
-            if(finura > 100):
-                print()
+            continue
         else:
             print("Paceta: ", pacetasVaziasCount)
             print(pacetasCount)
             pacetasVaziasCount += 1
         
-        
-         
-         
+             
     #sequence count
     while(pacetasCheck):
         while(pacetasCheck):
+            pacetasRepetir +=1
             if pacetasSequencia >= 3:
                 pacetasCheck = False
-            elif countWhile2  > len(pacetasDesenho):
+            elif countWhile2  >= len(pacetasDesenho):
                 countWhile1 += 1
                 countWhile2 = 0
-            elif countWhile1  > len(pacetasDesenho):
+            elif countWhile1  >= len(pacetasDesenho):
                 pacetasCheck = False
             elif pacetasDesenho[countWhile1] == pacetasDesenho[countWhile2]:
                 pacetasSequencia += 1
                 countWhile2+=1
             countWhile2+=1
+    print(pacetasRepetir)
         
-    
+    #numero de repetiçoes
+    pacetasRepetirComSequencia = pacetasRepetir
+    pacetasListsSlice = pacetasLists[:pacetasRepetirComSequencia]
+    print(len(pacetasListsSlice))
+    for pacetasSemRepetir in pacetasListsSlice:
+        pacetasNumber +=1
+        pacetasCountSequence = 1
+        for pacetasRepetidasFor in pacetasLists:
+            if(pacetasRepetidasFor == pacetasSemRepetir):
+                pacetasCountSequence += 1
+        print("Paceta: ", pacetasNumber, pacetasCountSequence)
+                  
       
     #check void point             
     for pacetasVect in range(finura):
