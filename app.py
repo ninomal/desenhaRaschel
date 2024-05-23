@@ -30,10 +30,25 @@ def main():
     pacetasNumber = 0
     pacetasCountSequence = 1
     pacetasComPontasList = []
+    finurasPosivel = [9 ,12 ,14 ,18 ,24]
+    finuraOk = True
+    
     
     finura = int(input("Finura: "))
+    
+    while finuraOk:
+        if finura in finurasPosivel:
+            finuraOk = False
+        else:
+            print(f"Finura {finura} não existe: " )
+            print("Digite a finura certa: ")
+            finura = 0
+            finura = int(input("Finura: "))
+                       
     quantidade = int(input("Quantidade: "))
     numeroVazio = int(input("numero Vazio: "))
+    
+    #desenho
     for desenho2 in range(numeroVazio): 
         desenho += CARCTVAZIO
     while paceta < quantidade:
@@ -87,7 +102,6 @@ def main():
             pacetasVaziasCount += 1
             pacetasComPontasList.append(pacetasCount)
         
-             
     #sequence count
     while(pacetasCheck):
         while(pacetasCheck):
@@ -116,8 +130,7 @@ def main():
             if(pacetasRepetidasFor == pacetasSemRepetir):
                 pacetasCountSequence += 1
         print("Paceta: ", pacetasNumber, pacetasCountSequence)
-                 
-             
+                        
     #check void point             
     for pacetasVect in range(finura):
         pacetasVaziasVect.append('-')
@@ -129,20 +142,14 @@ def main():
             count +=1
             if count >= (finura -1):
                 count = 0
-                
-           
+                         
     print()
     print("Pacetas para colocar gesso ==")
     print(pacetasVaziasVect)
     
                         
     
-    
-            
-              
-    
    
-    
     
 if __name__ == "__main__":
      main()
