@@ -33,8 +33,12 @@ def main():
     finurasPosivel = [9 ,12 ,14 ,18 ,24]
     finuraOk = True
     
-    
-    finura = int(input("Finura: "))
+    while True:
+        try:
+            finura = int(input("Finura: "))
+            break
+        except ValueError:
+            print("Não permetidas Letras")
     
     while finuraOk:
         if finura in finurasPosivel:
@@ -44,17 +48,38 @@ def main():
             print("Digite a finura certa: ")
             finura = 0
             finura = int(input("Finura: "))
-                       
-    quantidade = int(input("Quantidade: "))
-    numeroVazio = int(input("numero Vazio: "))
     
+    while True:
+        try:
+            quantidade = int(input("Quantidade: "))
+            break
+        except ValueError :
+            print("Não permetido letras")
+            
+    while True:
+        try:
+            numeroVazio = int(input("numero Vazio: "))
+            break
+        except ValueError :
+            print("Não permetido letras")
+        
     #desenho
     for desenho2 in range(numeroVazio): 
         desenho += CARCTVAZIO
     while paceta < quantidade:
         while(entrada1 != "n"):
-            numeroCheio = int(input("numero cheio: "))
-            numeroVazio = int(input("numero Vazio: "))
+            while True :
+                try:
+                    numeroCheio = int(input("numero cheio: "))
+                    break
+                except ValueError :
+                    print("Não permetido letras")
+            while True :
+                try:
+                    numeroVazio = int(input("numero Vazio: "))
+                    break
+                except ValueError :
+                    print("Não permetido letras")
             for desenho1 in range(numeroCheio):
                     desenho += CARCTCHEIO
             for desenho2 in range(numeroVazio):
@@ -117,12 +142,9 @@ def main():
                 pacetasSequencia += 1
                 countWhile2+=1
             countWhile2+=1
-    print(pacetasComPontasList)
-    print(pacetasRepetir)
-    
+   
     #numero de repetiçoes
     pacetasListsSlice = pacetasComPontasList[:pacetasRepetir]
-    print(len(pacetasListsSlice))
     for pacetasSemRepetir in pacetasListsSlice:
         pacetasNumber +=1
         pacetasCountSequence = 1
