@@ -1,3 +1,8 @@
+"""Copie o codigo clicando em copy raw file a cima ^
+    Instale o programa pycharm no celular ou qualquer leitor de python
+    cole o codigo dentro do programa e só clicar em iniciar
+                                                    """
+
 def main():
     CARCTCHEIO = "I"
     CARCTVAZIO = "-"
